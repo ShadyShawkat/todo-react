@@ -1,0 +1,12 @@
+.todo-list {
+  min-width: 30vw;
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid gray;
+  border-radius: 15px;
+}
+
+.todo-list li:last-child {
+  border-bottom: none;
+}
