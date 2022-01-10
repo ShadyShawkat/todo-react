@@ -4,7 +4,7 @@ import styles from './TodoList.module.css';
 
 import TodoItem from '../TodoItem/TodoItem';
 
-const TodoList = ({ todoList }) => (
+const TodoList = ({ todoList, changeTodoState }) => (
   <ul className={styles['todo-list']}>
     {todoList.map((todoItem) => (
       <TodoItem
@@ -12,6 +12,7 @@ const TodoList = ({ todoList }) => (
         id={todoItem.id}
         text={todoItem.text}
         completed={todoItem.completed}
+        changeTodoState={changeTodoState}
       />
     ))}
   </ul>
@@ -19,6 +20,7 @@ const TodoList = ({ todoList }) => (
 
 TodoList.propTypes = {
   todoList: PropTypes.arrayOf(TodoItem).isRequired,
+  changeTodoState: PropTypes.func.isRequired,
 };
 
 export default TodoList;

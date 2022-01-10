@@ -23,11 +23,25 @@ const todoDummyData = [
 
 const App = () => {
   const [todoList, setTodoList] = useState(todoDummyData);
-  console.log(setTodoList);
+
+  const changeTodoState = (id) => {
+    setTodoList((prevState) => {
+      const newState = prevState.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      });
+      return newState;
+    });
+  };
 
   return (
     <div className={styles.wrapper}>
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} changeTodoState={changeTodoState} />
     </div>
   );
 };
