@@ -1,0 +1,17 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border-bottom: 1px solid gray;
+  padding: 0.5em;
+}
+
+.todo-check {
+  transform: scale(1.5);
+}
+
+.todo-text {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+}
