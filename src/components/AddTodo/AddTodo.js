@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './AddTodo.module.css';
 
-const AddTodo = ({ AddTodo }) => {
+const AddTodo = ({ addTodo }) => {
   const [addInputValue, setAddInputValue] = useState('');
 
   const inputHandler = (e) => {
@@ -14,9 +14,9 @@ const AddTodo = ({ AddTodo }) => {
       <input value={addInputValue} onChange={inputHandler} />
       <button
         type="button"
-        disabled={addInputValue === ''}
+        disabled={addInputValue.trim() === ''}
         onClick={() => {
-          AddTodo(addInputValue);
+          addTodo(addInputValue);
         }}
       >
         +
@@ -26,7 +26,7 @@ const AddTodo = ({ AddTodo }) => {
 };
 
 AddTodo.propTypes = {
-  AddTodo: PropTypes.func.isRequired,
+  addTodo: PropTypes.func.isRequired,
 };
 
 export default AddTodo;

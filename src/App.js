@@ -6,17 +6,17 @@ import AddTodo from './components/AddTodo/AddTodo';
 
 const todoDummyData = [
   {
-    id: 1,
+    id: 0,
     text: 'Walk the dog',
     completed: true,
   },
   {
-    id: 2,
+    id: 1,
     text: 'DO homework',
     completed: false,
   },
   {
-    id: 3,
+    id: 2,
     text: 'work on project',
     completed: true,
   },
@@ -34,13 +34,13 @@ const App = () => {
   const [todoList, setTodoList] = useState(todoDummyData);
 
   const addTodo = (text) => {
-    const newArr = arrangeIds(todoList);
-    newArr.push({
-      id: newArr.length,
+    const newTodos = arrangeIds(todoList);
+    newTodos.push({
+      id: newTodos.length,
       text,
       completed: false,
     });
-    setTodoList(newArr);
+    setTodoList(newTodos);
   };
 
   const changeTodoState = (id) => {
@@ -59,16 +59,28 @@ const App = () => {
   };
 
   const deleteTodo = (id) => {
-    console.log(id);
+    const newTodos = todoList.filter((todo) => todo.id !== id);
+    setTodoList(arrangeIds(newTodos));
   };
 
-  const editTodo = (id) => {
-    console.log(id);
+  const editTodo = (id, newText) => {
+    setTodoList((prevState) => {
+      const newState = prevState.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            text: newText,
+          };
+        }
+        return todo;
+      });
+      return newState;
+    });
   };
 
   return (
     <div className={styles.wrapper}>
-      <AddTodo AddTodo={addTodo} />
+      <AddTodo addTodo={addTodo} />
       <TodoList
         todoList={todoList}
         changeTodoState={changeTodoState}
