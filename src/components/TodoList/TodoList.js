@@ -11,7 +11,7 @@ const TodoList = ({ todoList, changeTodoState, deleteTodo, editTodo }) => {
 
   return (
     <>
-      {todoList.length && (
+      {todoList.length > 0 && (
         <ul className={styles['todo-list']}>
           {todoList.map((todoItem) => (
             <TodoItem

@@ -4,39 +4,13 @@ import styles from './App.module.css';
 import TodoList from './components/TodoList/TodoList';
 import AddTodo from './components/AddTodo/AddTodo';
 
-const todoDummyData = [
-  {
-    id: 0,
-    text: 'Walk the dog',
-    completed: true,
-  },
-  {
-    id: 1,
-    text: 'DO homework',
-    completed: false,
-  },
-  {
-    id: 2,
-    text: 'work on project',
-    completed: true,
-  },
-];
-
-const arrangeIds = (arr) => {
-  const newArr = arr.map((obj, index) => ({
-    ...obj,
-    id: index,
-  }));
-  return newArr;
-};
-
 const App = () => {
-  const [todoList, setTodoList] = useState(todoDummyData);
+  const [todoList, setTodoList] = useState([]);
 
   const addTodo = (text) => {
-    const newTodos = arrangeIds(todoList);
+    const newTodos = [...todoList];
     newTodos.push({
-      id: newTodos.length,
+      id: Math.random(),
       text,
       completed: false,
     });
@@ -59,8 +33,10 @@ const App = () => {
   };
 
   const deleteTodo = (id) => {
-    const newTodos = todoList.filter((todo) => todo.id !== id);
-    setTodoList(arrangeIds(newTodos));
+    setTodoList((prevState) => {
+      const newTodos = prevState.filter((todo) => todo.id !== id);
+      return newTodos;
+    });
   };
 
   const editTodo = (id, newText) => {
