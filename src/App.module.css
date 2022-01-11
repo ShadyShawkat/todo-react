@@ -1,5 +1,26 @@
 .wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding-top: 20vh;
+  gap: 1em;
+  font-size: 1.5em;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+  transition: all 200ms;
+  transform: scale(1.25);
+}
+
+input[type='checkbox']:hover {
+  cursor: pointer;
+  transition: all 200ms;
+  transform: scale(1.75);
 }

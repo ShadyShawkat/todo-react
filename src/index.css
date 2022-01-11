@@ -1,6 +1,5 @@
 /* Font imports */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 
 /* Resets */
 
@@ -43,6 +42,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: 'Kalam', cursive;
 }
 
 /* A elements that don't have a class get default styles */

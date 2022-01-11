@@ -1,6 +1,5 @@
 .todo-list {
-  min-width: 30vw;
-  max-width: 50vw;
+  width: 40vw;
   display: flex;
   flex-direction: column;
   border: 3px solid gray;
