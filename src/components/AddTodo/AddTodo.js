@@ -11,12 +11,17 @@ const AddTodo = ({ addTodo }) => {
 
   return (
     <div className={styles['add-todo']}>
-      <input value={addInputValue} onChange={inputHandler} />
+      <input
+        value={addInputValue}
+        onChange={inputHandler}
+        placeholder="Add a todo"
+      />
       <button
         type="button"
         disabled={addInputValue.trim() === ''}
         onClick={() => {
-          addTodo(addInputValue);
+          addTodo(addInputValue.trim());
+          setAddInputValue('');
         }}
       >
         +
