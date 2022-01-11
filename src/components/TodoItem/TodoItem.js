@@ -43,7 +43,8 @@ const TodoItem = ({
         setGlobalEditingMode(-1);
         return;
       }
-      editTodo(id, inputRef.current.value);
+      editTodo(id, inputRef.current.value.trim());
+      inputRef.current.value = inputRef.current.value.trim();
       setGlobalEditingMode(-1);
     }
   };
