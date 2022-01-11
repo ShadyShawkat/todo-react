@@ -54,6 +54,13 @@ const App = () => {
     });
   };
 
+  const clearCompletedHandler = () => {
+    setTodoList((prevState) => {
+      const newState = prevState.filter((todo) => !todo.completed);
+      return newState;
+    });
+  };
+
   return (
     <div className={styles.wrapper}>
       <AddTodo addTodo={addTodo} />
@@ -63,6 +70,16 @@ const App = () => {
         deleteTodo={deleteTodo}
         editTodo={editTodo}
       />
+      {todoList.length > 0 && (
+        <button
+          type="button"
+          className={styles['clear-completed-btn']}
+          disabled={!todoList.find((todo) => todo.completed)}
+          onClick={clearCompletedHandler}
+        >
+          Clear All Completed
+        </button>
+      )}
     </div>
   );
 };

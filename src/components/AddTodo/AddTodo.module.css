@@ -19,6 +19,7 @@
   border-left: 1px solid gray;
   color: #4239c9;
   padding-right: 15px;
+  font-weight: bold;
 }
 
 .add-todo button:disabled {

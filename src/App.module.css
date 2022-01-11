@@ -24,3 +24,25 @@ input[type='checkbox']:hover {
   transition: all 200ms;
   transform: scale(1.75);
 }
+
+.clear-completed-btn {
+  width: 40vw;
+  border: 2px solid gray;
+  padding: 3px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  color: rgb(134, 0, 0);
+}
+
+.clear-completed-btn:disabled {
+  color: white;
+  background-color: gray;
+  cursor: not-allowed;
+  transform: scale(1);
+}
+
+.clear-completed-btn:not([disabled]):hover {
+  transform: scale(1);
+  color: white;
+  background-color: rgb(134, 0, 0);
+}
