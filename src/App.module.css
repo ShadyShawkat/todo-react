@@ -1,81 +1,48 @@
-/* Font imports */
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
-
-/* Resets */
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20vh;
+  gap: 1em;
+  font-size: 1.5em;
 }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
+button {
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul,
-ol {
-  list-style: none;
+button:hover {
+  cursor: pointer;
+  transition: all 200ms;
+  transform: scale(1.25);
 }
 
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
+input[type='checkbox']:hover {
+  cursor: pointer;
+  transition: all 200ms;
+  transform: scale(1.75);
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  font-family: "Oswald", sans-serif;
+.clear-completed-btn {
+  width: 40vw;
+  border: 2px solid gray;
+  padding: 3px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  color: rgb(134, 0, 0);
 }
 
-/* A elements that don't have a class get default styles */
-a {
-  text-decoration-skip-ink: auto;
+.clear-completed-btn:disabled {
+  color: white;
+  background-color: gray;
+  cursor: not-allowed;
+  transform: scale(1);
 }
 
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+.clear-completed-btn:not([disabled]):hover {
+  transform: scale(1);
+  color: white;
+  background-color: rgb(134, 0, 0);
 }

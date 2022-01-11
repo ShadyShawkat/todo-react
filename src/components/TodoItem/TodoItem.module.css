@@ -1,0 +1,36 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5em;
+  border-bottom: 1px solid gray;
+  padding: 0.5em;
+}
+
+.todo-check {
+  transform: scale(1.5);
+}
+
+.todo-text {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+
+.todo-item.todo-completed .todo-text {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.delete-btn {
+  color: #d10000;
+  justify-self: flex-end;
+
+  /* margin-left: auto; */
+}
+
+.edit-btn {
+  color: #007200;
+  justify-self: flex-end;
+}

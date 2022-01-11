@@ -1,0 +1,35 @@
+.add-todo {
+  width: 40vw;
+  display: flex;
+  justify-content: flex-start;
+  border: 2px solid gray;
+  padding: 3px 0 3px 20px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.add-todo input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.add-todo button {
+  transform: scale(1.5);
+  border-left: 1px solid gray;
+  color: #4239c9;
+  padding-right: 15px;
+  font-weight: bold;
+}
+
+.add-todo button:disabled {
+  background-color: white;
+  color: gray;
+  cursor: not-allowed;
+}
+
+.add-todo button:not([disabled]):hover {
+  background-color: #4239c9;
+  color: white;
+  transition: all 600ms;
+}
